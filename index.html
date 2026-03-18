@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Forum&family=Great+Vibes&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f7f1ea;
@@ -485,7 +486,7 @@
     @keyframes glowMove { from { opacity: .55; transform: translateY(0); } to { opacity: .82; transform: translateY(-12px); } }
     @keyframes hazeMove { from { transform: translateY(0); } to { transform: translateY(-16px); } }
 
-    @media (max-width: 560px) {
+    @media (max-width: 768px) {
       .hero-title-wrap { top: max(16px, env(safe-area-inset-top)); width: 90vw; }
       .hero-title-line { font-size: clamp(2.2rem, 12vw, 3.5rem); }
       .hero-title-mid { font-size: clamp(2rem, 11vw, 3.2rem); }
@@ -496,6 +497,36 @@
       }
       .music-toggle { width: 144px; height: 144px; }
       .section { padding-inline: 16px; }
+
+  .story-ribbon::before,
+  .story-ribbon::after{
+    display:none !important;
+  }
+
+  .story-ribbon{
+    background-size: 170% auto !important;
+    background-position: center top !important;
+  }
+.story-ribbon .story-title,
+.story-ribbon .story-text{
+  font-family: "Cormorant Garamond", serif;
+  color: #5a4338;
+  text-align: center;
+}
+
+.story-ribbon .story-title{
+  font-size: clamp(28px, 6vw, 50px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.story-ribbon .story-text{
+  font-size: clamp(22px, 4.8vw, 38px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
       .story-section { padding-block: 44px; }
       .story-text.poem { font-size: clamp(1.9rem, 8.6vw, 2.8rem); line-height: 1.2; }
       .story-text.notice { font-size: clamp(1.88rem, 8.4vw, 2.7rem); line-height: 1.14; }
@@ -511,13 +542,11 @@
       .countdown-item { padding-inline: 4px; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
+  @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
   </style>
 </head>
 <body>
