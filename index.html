@@ -580,7 +580,7 @@
       <div class="story-ribbon">
         <section class="section story-section reveal">
           <div class="section-inner">
-            <p class="story-text poem">Бүгін тағы ата дәстүр<br>жалғасты,<br>бастамақшы құтты<br>қадам алғашқы,<br>қол ұстасып отау<br>тікен<br>қос бота,<br>көпшіліктің ақ<br>батасын<br>алмақшы.</p>
+            <p class="story-text poem">Бүгін тағы ата дәстүр жалғасты,<br>бастамақшы құтты қадам алғашқы,<br>қол ұстасып <br>отау тікен қос бота,<br>көпшіліктің<br>ақ батасын алмақшы!</p>
           </div>
         </section>
 
@@ -592,7 +592,7 @@
 
         <section class="section story-section reveal">
           <div class="section-inner">
-            <p class="story-text invite"><span class="lead">СІЗДЕРДІ БАЛАЛАРЫМЫЗ</span><span class="name">АЛИ</span><span class="conj">мен</span><span class="name">ДАМИРАНЫҢ</span>ҮЙЛЕНУ ТОЙЫНА<br>АРНАЛҒАН САЛТАНАТТЫ АҚ<br>ДАСТАРХАНЫМЫЗДЫҢ<br>ҚАДІРЛІ ҚОНАҒЫ БОЛУҒА<br>ШАҚЫРАМЫЗ!</p>
+            <p class="story-text invite"><span class="lead">Сіздерді балаларымыз</span><span class="name">АЛИ</span><span class="conj">мен</span><span class="name">ДАМИРАНЫҢ</span>үйлену тойына<br>арналған салтанатты ақ<br>дастарханымыздың<br>ҚАДІРЛІ ҚОНАҒЫ БОЛУҒА<br>ШАҚЫРАМЫЗ!</p>
           </div>
         </section>
       </div>
@@ -699,7 +699,7 @@
       const name = document.getElementById('guestName').value.trim();
       const answer = new FormData(form).get('attendance');
       if (!name) {
-        statusEl.textContent = 'Аты-жөніңізді жазыңыз';
+        statusEl.textContent = 'Есіміңіз';
         return;
       }
       statusEl.textContent = 'Жіберілуде...';
@@ -739,5 +739,25 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
+  <script>
+  const musicBtn = document.querySelector('.music-btn');
+  const music = document.getElementById('bgMusic');
+
+  if (musicBtn) {
+    musicBtn.addEventListener('click', async () => {
+      try {
+        if (music.paused) {
+          await music.play();
+          musicBtn.classList.add('is-playing');
+        } else {
+          music.pause();
+          musicBtn.classList.remove('is-playing');
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    });
+  }
+</script>
 </body>
 </html>
