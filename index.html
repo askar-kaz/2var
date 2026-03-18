@@ -549,20 +549,35 @@
   position: relative;
 }
 
+.calendar .day.highlight{
+  position: relative;
+}
+
 .calendar .day.highlight::before,
 .calendar .day.highlight::after{
   content: "";
   position: absolute;
-  width: 16px !important;
-  height: 24px !important;
-  top: 8px !important;
+  width: 13px !important;
+  height: 20px !important;
+  top: 11px !important;
   border: 2px solid #b08a83 !important;
   border-bottom: none !important;
   background: transparent !important;
-  border-radius: 16px 16px 0 0 !important;
+  border-radius: 14px 14px 0 0 !important;
   z-index: 0 !important;
 }
 
+.calendar .day.highlight::before{
+  left: 50% !important;
+  transform: translateX(-88%) rotate(-45deg) !important;
+  transform-origin: bottom right !important;
+}
+
+.calendar .day.highlight::after{
+  left: 50% !important;
+  transform: translateX(-12%) rotate(45deg) !important;
+  transform-origin: bottom left !important;
+}
 .calendar .day.highlight::before{
   left: 50% !important;
   transform: translateX(-100%) rotate(-45deg) !important;
