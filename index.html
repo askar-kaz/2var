@@ -540,8 +540,18 @@
       .calendar .day.highlight::after { width: 24px; height: 38px; top: -1px; }
       .countdown { gap: 8px; }
       .countdown-item { padding-inline: 4px; }
-    }
 
+  .timeline-item .label{
+    font-size: 28px;
+  }
+  .hosts-name{
+    font-size: 30px;
+  }
+      .timeline-item .time{
+  font-size: clamp(22px, 4.8vw, 34px);
+  font-weight: 600;
+}
+}
   @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
