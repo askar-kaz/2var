@@ -545,11 +545,34 @@
       .story-text.invite { font-size: clamp(1.9rem, 7.5vw, 2.7rem); line-height: 1.16; }
       .story-text.invite .lead { font-size: 1.1em; }
       .story-text.invite .name { font-size: 1.7em; }
-      .calendar .day.highlight::before,
+      .calendar .day.highlight{
+  position: relative;
+}
+
+.calendar .day.highlight::before,
 .calendar .day.highlight::after{
+  content: "";
+  position: absolute;
   width: 16px !important;
   height: 24px !important;
-  top: 6px !important;
+  top: 8px !important;
+  border: 2px solid #b08a83 !important;
+  border-bottom: none !important;
+  background: transparent !important;
+  border-radius: 16px 16px 0 0 !important;
+  z-index: 0 !important;
+}
+
+.calendar .day.highlight::before{
+  left: 50% !important;
+  transform: translateX(-100%) rotate(-45deg) !important;
+  transform-origin: bottom right !important;
+}
+
+.calendar .day.highlight::after{
+  left: 50% !important;
+  transform: translateX(0%) rotate(45deg) !important;
+  transform-origin: bottom left !important;
 }
       .panel { width: 100%; padding: 22px 18px; border-radius: 28px; }
       .calendar { gap: 8px 4px; }
