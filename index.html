@@ -570,13 +570,16 @@
   width: 38px;
   height: 34px;
   transform: translate(-50%, -50%);
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'><path d='M50 78 C46 74, 14 54, 14 30 C14 18, 22 10, 32 10 C40 10, 47 15, 50 22 C53 15, 60 10, 68 10 C78 10, 86 18, 86 30 C86 54, 54 74, 50 78 Z' fill='none' stroke='%23b08a83' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 58'><path d='M32 52 C30 50, 9 35, 9 19 C9 11, 15 6, 22 6 C27 6, 31 9, 32 13 C33 9, 37 6, 42 6 C49 6, 55 11, 55 19 C55 35, 34 50, 32 52 Z' fill='none' stroke='%23b08a83' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
   pointer-events: none;
   z-index: -1;
 }
 
 .calendar .day.highlight::after{
+  content: none !important;
   display: none !important;
+  background: none !important;
+  border: 0 !important;
 }
 
 
