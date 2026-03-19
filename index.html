@@ -563,14 +563,16 @@
 }
 
 .calendar .day.highlight::before{
-  content: "";
+  content: "♡";
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 38px;
-  height: 34px;
-  transform: translate(-50%, -50%);
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 58'><path d='M32 52 C30 50, 9 35, 9 19 C9 11, 15 6, 22 6 C27 6, 31 9, 32 13 C33 9, 37 6, 42 6 C49 6, 55 11, 55 19 C55 35, 34 50, 32 52 Z' fill='none' stroke='%23b08a83' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+  transform: translate(-50%, -56%);
+  font-size: 46px;
+  line-height: 1;
+  color: #b08a83;
+  font-family: serif;
+  font-weight: 400;
   pointer-events: none;
   z-index: -1;
 }
@@ -578,10 +580,7 @@
 .calendar .day.highlight::after{
   content: none !important;
   display: none !important;
-  background: none !important;
-  border: 0 !important;
 }
-
 
       .panel { width: 100%; padding: 22px 18px; border-radius: 28px; }
       .calendar { gap: 8px 4px; }
@@ -695,7 +694,7 @@
           <h2 class="section-title">Тойға келуіңізді растауыңызды сұраймыз!</h2>
           <div class="rsvp-copy">Жұбайыңызбен келетін болсаңыз,<br>есімдеріңізді бірге жазуыңызды өтінеміз</div>
           <form id="rsvpForm" novalidate>
-            <input class="field" id="guestName" name="guestName" type="text" placeholder="Есімңіз" autocomplete="name" required>
+            <input class="field" id="guestName" name="guestName" type="text" placeholder="Есіміңіз" autocomplete="name" required>
             <div class="options">
               <label class="option"><input type="radio" name="attendance" value="Қатысамын" checked><span>Келемін</span></label>
               <label class="option"><input type="radio" name="attendance" value="Жұбайыммен келемін"><span>Жұбайыммен келемін</span></label>
