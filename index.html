@@ -560,6 +560,7 @@
 .calendar .day.highlight{
   position: relative;
   z-index: 1;
+  overflow: visible !important;
 }
 
 .calendar .day.highlight::before{
@@ -567,9 +568,9 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 36px;
-  height: 32px;
-  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 34px;
+  transform: translate(-50%, -44%);
   background: url('assets/heart-outline.png') center / contain no-repeat;
   pointer-events: none;
   z-index: -1;
@@ -578,6 +579,11 @@
 .calendar .day.highlight::after{
   content: none !important;
   display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
       .panel { width: 100%; padding: 22px 18px; border-radius: 28px; }
