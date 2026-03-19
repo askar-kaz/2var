@@ -563,16 +563,14 @@
 }
 
 .calendar .day.highlight::before{
-  content: "♡";
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -56%);
-  font-size: 46px;
-  line-height: 1;
-  color: #b08a83;
-  font-family: serif;
-  font-weight: 400;
+  width: 36px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  background: url('assets/heart-outline.png') center / contain no-repeat;
   pointer-events: none;
   z-index: -1;
 }
