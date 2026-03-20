@@ -485,30 +485,35 @@
 
     @media (max-width: 768px) {
       .hero-title-wrap { top: max(16px, env(safe-area-inset-top)); width: 90vw; }
-.hero-title-wrap{
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.hero-title-split{
+  width: min(92vw, 760px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.hero-title-left,
+.hero-title-right{
+  position: static;
+  margin: 0;
 }
 
 .hero-title-left{
-  position: absolute;
-  top: 56px;
-  left: 48px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 8vw, 5.2rem);
-  color: #a47a68;
+  text-align: left;
 }
 
 .hero-title-right{
-  position: absolute;
-  top: 170px;
-  right: 44px;
+  text-align: right;
+}
+    .hero-title-line{
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 8vw, 5.2rem);
+  font-size: clamp(3rem, 8vw, 5.6rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
   color: #a47a68;
 }
-      .hero-title-line { font-size: clamp(2.2rem, 12vw, 3.5rem); }
       .hero-title-mid { font-size: clamp(2rem, 11vw, 3.2rem); }
       .hero-photo {
         background:
@@ -613,10 +618,10 @@
   <main class="site">
     <div class="shell">
       <section class="hero reveal">
-        <div class="hero-title-wrap">
-          <span class="hero-title-left">Ali</span>
-            <span class="hero-title-right">Damira</span>
-        </div>
+       <div class="hero-title-wrap hero-title-split">
+  <div class="hero-title-line hero-title-left">Ali</div>
+  <div class="hero-title-line hero-title-right">Damira</div>
+</div>
         <div class="hero-visual">
           <div class="hero-photo" aria-hidden="true"></div>
           <div class="hero-music">
