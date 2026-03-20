@@ -485,27 +485,12 @@
 
     @media (max-width: 768px) {
       .hero-title-wrap { top: max(16px, env(safe-area-inset-top)); width: 90vw; }
-.hero-title-split{
-  width: min(92vw, 760px);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 24px;
-}
+  .hero-title-split{
+    width: 88vw;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-.hero-title-left,
-.hero-title-right{
-  position: static;
-  margin: 0;
-}
-
-.hero-title-left{
-  text-align: left;
-}
-
-.hero-title-right{
-  text-align: right;
-}
     .hero-title-line{
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(3rem, 8vw, 5.6rem);
