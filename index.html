@@ -783,25 +783,58 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
-  <script>
-  const musicBtn = document.querySelector('.music-btn');
-  const music = document.getElementById('bgMusic');
+<script>
+  const musicToggle = document.getElementById('musicToggle');
+  const audio = document.getElementById('weddingAudio');
 
-  if (musicBtn) {
-    musicBtn.addEventListener('click', async () => {
+  let audioStarted = false;
+
+  async function startAudio() {
+    try {
+      if (!audioStarted) {
+        audio.load();
+      }
+      await audio.play();
+      audioStarted = true;
+      if (musicToggle) musicToggle.classList.add('is-playing');
+    } catch (e) {
+      if (musicToggle) musicToggle.classList.remove('is-playing');
+      console.log(e);
+    }
+  }
+
+  async function startOnFirstTouch() {
+    if (audioStarted) return;
+    await startAudio();
+  }
+
+  document.addEventListener('click', startOnFirstTouch, { once: true });
+  document.addEventListener('touchstart', startOnFirstTouch, { once: true, passive: true });
+
+  if (musicToggle) {
+    musicToggle.addEventListener('click', async (e) => {
+      e.stopPropagation();
+
       try {
-        if (music.paused) {
-          await music.play();
-          musicBtn.classList.add('is-playing');
+        if (audio.paused) {
+          await startAudio();
         } else {
-          music.pause();
-          musicBtn.classList.remove('is-playing');
+          audio.pause();
+          if (musicToggle) musicToggle.classList.remove('is-playing');
         }
       } catch (e) {
         console.log(e);
       }
     });
   }
+
+  audio.addEventListener('pause', () => {
+    if (musicToggle) musicToggle.classList.remove('is-playing');
+  });
+
+  audio.addEventListener('ended', () => {
+    if (musicToggle) musicToggle.classList.remove('is-playing');
+  });
 </script>
 </body>
 </html>
