@@ -485,6 +485,29 @@
 
     @media (max-width: 768px) {
       .hero-title-wrap { top: max(16px, env(safe-area-inset-top)); width: 90vw; }
+.hero-title-wrap{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-title-left{
+  position: absolute;
+  top: 56px;
+  left: 48px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  color: #a47a68;
+}
+
+.hero-title-right{
+  position: absolute;
+  top: 170px;
+  right: 44px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  color: #a47a68;
+}
       .hero-title-line { font-size: clamp(2.2rem, 12vw, 3.5rem); }
       .hero-title-mid { font-size: clamp(2rem, 11vw, 3.2rem); }
       .hero-photo {
@@ -591,9 +614,8 @@
     <div class="shell">
       <section class="hero reveal">
         <div class="hero-title-wrap">
-          <span class="hero-title-line">Ali    </span>
-          <span class="hero-title-mid"></span>
-          <span class="hero-title-line">     Damira</span>
+          <span class="hero-title-left">Ali</span>
+            <span class="hero-title-right">Damira</span>
         </div>
         <div class="hero-visual">
           <div class="hero-photo" aria-hidden="true"></div>
